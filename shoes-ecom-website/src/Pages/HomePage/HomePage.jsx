@@ -22,7 +22,7 @@ const HomePage = () => {
           <div className="overlay"></div>
         </div>
         <div className="featured-products">
-          <p>Featured Brands</p>
+          <p>Featured Brands.</p>
         </div>
       </div>
       <div className="featured-brands">

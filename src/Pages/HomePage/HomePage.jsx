@@ -1,10 +1,10 @@
 import "./HomePage.css";
-
+import { Link } from "react-router-dom";
 import { useCategory } from "../../Context/CategoryContext";
 
 const HomePage = () => {
   const { categoryList } = useCategory();
-  console.log("categoryList", categoryList);
+
   return (
     <div>
       <div className="home-container">
@@ -16,7 +16,11 @@ const HomePage = () => {
               <div>
                 <h1>FIND YOUR KICKS</h1>
               </div>
-              <button>Shop Now</button>
+              <button>
+                <Link className="link" to="/product">
+                  Shop Now
+                </Link>
+              </button>
             </div>
           </div>
           <div className="overlay"></div>

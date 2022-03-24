@@ -11,14 +11,14 @@ import { ProductProvider } from "./Context/ProductContext";
 makeServer();
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <ProductProvider>
-        <CategoryProvider>
+  <React.StrictMode>
+    <ProductProvider>
+      <CategoryProvider>
+        <BrowserRouter>
           <App />
-        </CategoryProvider>
-      </ProductProvider>
-    </React.StrictMode>
-  </BrowserRouter>,
+        </BrowserRouter>
+      </CategoryProvider>
+    </ProductProvider>
+  </React.StrictMode>,
   document.getElementById("root")
 );

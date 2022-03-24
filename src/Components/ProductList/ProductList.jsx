@@ -5,7 +5,7 @@ import "./ProductList.css";
 const ProductList = () => {
   const { productList } = useProduct();
   const { state } = useFilter();
-  console.log(state);
+
   const filterByPrice = (products, sortByPrice) => {
     if (sortByPrice === "lowToHigh") {
       return products.sort((a, b) => a.discountedPrice - b.discountedPrice);
@@ -15,7 +15,6 @@ const ProductList = () => {
     return products;
   };
   const filterByRating = (products, rating) => {
-    console.log("rating", rating);
     return products.filter((obj) => obj.rating >= rating);
   };
 
@@ -32,7 +31,7 @@ const ProductList = () => {
     ),
     state.rating
   );
-  console.log("filteredProducts", filteredProducts);
+
   return (
     <div className="container">
       <h1>Showing All Products ({filteredProducts.length})</h1>

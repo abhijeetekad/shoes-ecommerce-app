@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../../Context/CartContext";
 import "./ProductCard.css";
 
 const ProductCard = ({ productInfo }) => {
+  const { cartState, dispatchCart } = useCart();
   return (
     <div>
       <div className="shoe-card">
@@ -19,8 +21,41 @@ const ProductCard = ({ productInfo }) => {
           </div>
         </div>
         <div className="card-btn">
-          <button className="btn">Add to Wishlist</button>
-          <button className="btn">Add to cart</button>
+          <button
+            className="btn"
+            onClick={() =>
+              dispatchCart({
+                type: "ADD_ITEMS_TO_WISHLIST",
+                payload: productInfo,
+              })
+            }
+          >
+            Add to Wishlist
+          </button>
+          {cartState.cart.some((p) => p.id === productInfo.id) ? (
+            <button
+              className="btn"
+              onClick={() =>
+                dispatchCart({ type: "GO_TO_CART", payload: productInfo })
+              }
+            >
+              <Link className="link" to="/cart">
+                Go to cart
+              </Link>
+            </button>
+          ) : (
+            <button
+              className="btn"
+              onClick={() =>
+                dispatchCart({
+                  type: "ADD_ITEMS_TO_CART",
+                  payload: productInfo,
+                })
+              }
+            >
+              Add to cart
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -25,9 +25,11 @@ const Navbar = () => {
         <Link className="link" to="/cart">
           <div className="heart-badge">
             <i className="fas fa-shopping-cart fa-2x"></i>
-            <div className="notification-badge flex-row">
-              <span>{cartState.cart.length}</span>
-            </div>
+            {cartState.cart.length === 0 ? null : (
+              <div className="notification-badge flex-row">
+                <span>{cartState.cart.length}</span>
+              </div>
+            )}
           </div>
         </Link>
         <div className="account">

@@ -43,7 +43,7 @@ const CartList = () => {
                 </div>
                 <div className="checkout-btn">
                   <button className="cart-btn">BUY</button>
-                  <button className="cart-btn">SELL</button>
+                  <button className="cart-btn">REMOVE</button>
                 </div>
               </div>
             </div>

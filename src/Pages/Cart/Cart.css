@@ -1,3 +1,6 @@
+.margin-4-rem {
+  margin-bottom: 4rem;
+}
 .final-checkout {
   display: flex;
   justify-content: space-evenly;
@@ -76,7 +79,6 @@
   list-style: none;
   display: flex;
   align-items: center;
-
   cursor: pointer;
 }
 

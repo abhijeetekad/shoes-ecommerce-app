@@ -5,7 +5,7 @@ import "./Cart.css";
 const Cart = () => {
   const { cartState } = useCart();
   return (
-    <div>
+    <div className="cart">
       {cartState.cart.length === 0 ? (
         <h1>Your cart is empty (0)</h1>
       ) : (

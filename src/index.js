@@ -8,23 +8,26 @@ import { BrowserRouter } from "react-router-dom";
 import { ProductProvider } from "./Context/ProductContext";
 import { FilterProvider } from "./Context/FilterContext";
 import { CartProvider } from "./Context/CartContext";
+import { WishProvider } from "./Context/WishListContext";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <CartProvider>
-      <FilterProvider>
-        <ProductProvider>
-          <CategoryProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </CategoryProvider>
-        </ProductProvider>
-      </FilterProvider>
-    </CartProvider>
+    <WishProvider>
+      <CartProvider>
+        <FilterProvider>
+          <ProductProvider>
+            <CategoryProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </CategoryProvider>
+          </ProductProvider>
+        </FilterProvider>
+      </CartProvider>
+    </WishProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

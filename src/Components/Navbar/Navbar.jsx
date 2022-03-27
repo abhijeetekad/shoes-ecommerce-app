@@ -1,27 +1,43 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
+import { useWish } from "../../Context/WishListContext";
 import "./Navbar.css";
 const Navbar = () => {
   const { cartState } = useCart();
+  const { wishState } = useWish();
+
   return (
     <header className="nav-header">
-      <div className="nav-logo">
-        <h2>RARE KICKS</h2>
-      </div>
+      <Link className="link" to="/">
+        {" "}
+        <div className="nav-logo">
+          <h2>RARE KICKS</h2>
+        </div>
+      </Link>
+
       <div className="search-container">
         <i className="fas fa-search"></i>
         <input type="search" placeholder="Search for product" />
       </div>
       <div className="nav-icons">
         <div className="sign-in">
-          <p>Sign in</p>
+          <Link className="link" to="/signup">
+            {" "}
+            <p>Sign in</p>
+          </Link>
         </div>
-        <div className="heart-badge">
-          <i className="fas fa-heart fa-2x"></i>
-          <div className="notification-badge flex-row">
-            <span>2</span>
+        <Link className="link" to="/wishlist">
+          {" "}
+          <div className="heart-badge">
+            <i className="fas fa-heart fa-2x"></i>
+            {wishState.wish.length === 0 ? null : (
+              <div className="notification-badge flex-row">
+                <span>{wishState.wish.length}</span>
+              </div>
+            )}
           </div>
-        </div>
+        </Link>
+
         <Link className="link" to="/cart">
           <div className="heart-badge">
             <i className="fas fa-shopping-cart fa-2x"></i>

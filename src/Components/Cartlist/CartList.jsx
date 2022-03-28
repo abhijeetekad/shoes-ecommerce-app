@@ -1,7 +1,9 @@
 import { useCart } from "../../Context/CartContext";
+import { useWish } from "../../Context/WishListContext";
 
 const CartList = () => {
   const { cartState, dispatchCart } = useCart();
+  const { wishState, dispatchWish } = useWish();
 
   return (
     <>
@@ -43,7 +45,17 @@ const CartList = () => {
                 </div>
                 <div className="checkout-btn">
                   <button className="cart-btn">BUY</button>
-                  <button className="cart-btn">REMOVE</button>
+                  <button
+                    className="cart-btn"
+                    onClick={() =>
+                      dispatchCart({
+                        type: "REMOVE_FROM_CART",
+                        payload: cartCard,
+                      })
+                    }
+                  >
+                    REMOVE
+                  </button>
                 </div>
               </div>
             </div>

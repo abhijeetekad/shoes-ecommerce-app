@@ -32,12 +32,14 @@ const HomePage = () => {
       <div className="featured-brands">
         {categoryList.map(({ categoryName, image }) => {
           return (
-            <div className="brand">
-              <img src={image} />
-              <div className="brand-overlay">
-                <p className="overlay-msg">Shop Now</p>
+            <Link to="/product">
+              <div className="brand">
+                <img src={image} />
+                <div className="brand-overlay">
+                  <p className="overlay-msg">Shop Now</p>
+                </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

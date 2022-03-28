@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
+import { useWish } from "../../Context/WishListContext";
 import "./ProductCard.css";
 
 const ProductCard = ({ productInfo }) => {
   const { cartState, dispatchCart } = useCart();
+  const { wishState, dispatchWish } = useWish();
   return (
     <div>
       <div className="shoe-card">
@@ -21,17 +23,26 @@ const ProductCard = ({ productInfo }) => {
           </div>
         </div>
         <div className="card-btn">
-          <button
-            className="btn"
-            onClick={() =>
-              dispatchCart({
-                type: "ADD_ITEMS_TO_WISHLIST",
-                payload: productInfo,
-              })
-            }
-          >
-            Add to Wishlist
-          </button>
+          {wishState.wish.some((w) => w.id === productInfo.id) ? (
+            <button className="btn">
+              <Link className="link" to="/wishlist">
+                Go to wishlist
+              </Link>
+            </button>
+          ) : (
+            <button
+              className="btn"
+              onClick={() =>
+                dispatchWish({
+                  type: "ADD_ITEMS_TO_WISHLIST",
+                  payload: productInfo,
+                })
+              }
+            >
+              Add to wishlist
+            </button>
+          )}
+
           {cartState.cart.some((p) => p.id === productInfo.id) ? (
             <button
               className="btn"

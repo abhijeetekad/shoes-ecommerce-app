@@ -34,7 +34,7 @@
   justify-content: flex-start;
   align-items: center;
 }
-.card-desc h1 {
+.card-desc h2 {
   font-size: 22px;
 }
 .card-desc h4 {
@@ -102,6 +102,16 @@
   }
   .shoe-card {
     width: 20rem;
-    height: 23rem;
+    height: 55rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .shoe-card img {
+    width: 80%;
+    height: 8rem;
+  }
+  .card-desc h2 {
+    font-size: 18px;
   }
 }

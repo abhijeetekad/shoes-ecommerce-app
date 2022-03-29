@@ -9,11 +9,13 @@ const Cart = () => {
       {cartState.cart.length === 0 ? (
         <h1>Your cart is empty (0)</h1>
       ) : (
-        <div>
+        <div className="cart">
           <h1 className="margin-4-rem">Cart ({cartState.cart.length})</h1>
-          <div className="final-checkout">
-            <CartPrice />
-            <CartList />
+          <div className="checkout-details">
+            <div className="final-checkout">
+              <CartPrice />
+              <CartList />
+            </div>
           </div>
         </div>
       )}

@@ -111,7 +111,7 @@ export const products = [
     title: "not available",
     discountedPrice: "100",
     originalPrice: "",
-    discount: "",
+    discount: "10",
     image: "AssetPublic/Images/High OG SP Fragment x Travis Scott.webp",
     inWishlist: false,
     rating: "1",

@@ -1,11 +1,12 @@
 import { useFilter } from "../../Context/FilterContext";
 import { useProduct } from "../../Context/ProductContext";
+import { useSidebar } from "../../Context/SidebarToggleContext";
 import { ProductCard } from "../ProductCard/ProductCard";
 import "./ProductList.css";
 const ProductList = () => {
   const { productList } = useProduct();
   const { state } = useFilter();
-
+  const { showSidebar } = useSidebar();
   const filterByPrice = (products, sortByPrice) => {
     if (sortByPrice === "lowToHigh") {
       return products.sort((a, b) => a.discountedPrice - b.discountedPrice);
@@ -33,12 +34,17 @@ const ProductList = () => {
   );
 
   return (
-    <div className="container">
-      <h1>Showing All Products ({filteredProducts.length})</h1>
-      <div className="products">
-        {filteredProducts.map((productInfo) => {
-          return <ProductCard productInfo={productInfo} />;
-        })}
+    <div>
+      <div
+        style={{ marginLeft: !showSidebar ? "0.5rem" : "" }}
+        className="container"
+      >
+        <h1>Showing All Products ({filteredProducts.length})</h1>
+        <div className="products">
+          {filteredProducts.map((productInfo) => {
+            return <ProductCard productInfo={productInfo} />;
+          })}
+        </div>
       </div>
     </div>
   );

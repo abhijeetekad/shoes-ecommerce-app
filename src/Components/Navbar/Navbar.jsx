@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
+import { useSidebar } from "../../Context/SidebarToggleContext";
 import { useWish } from "../../Context/WishListContext";
+
 import "./Navbar.css";
 const Navbar = () => {
   const { cartState } = useCart();
   const { wishState } = useWish();
-
+  const { showSidebar, sidebarToggler } = useSidebar();
+  console.log(showSidebar);
   return (
     <header className="nav-header">
+      <label
+        className="sidebar-btn"
+        onClick={() => sidebarToggler((showSidebar) => !showSidebar)}
+      >
+        <i class="fas fa-grip-lines fa-2x"></i>
+      </label>
+
       <Link className="link" to="/">
         {" "}
         <div className="nav-logo">

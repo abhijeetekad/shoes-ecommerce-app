@@ -16,6 +16,7 @@
   height: 100vh;
   padding-bottom: 10rem;
   border-right-style: solid;
+  background-color: white;
 }
 .filter-head {
   display: flex;
@@ -74,9 +75,6 @@ input[type="range"] {
 }
 
 @media screen and (max-width: 780px) {
-  .filter-bar {
-    display: none;
-  }
   .container {
     width: 100%;
     margin-left: 1rem;

@@ -1,10 +1,12 @@
 import "./HomePage.css";
 import { Link } from "react-router-dom";
 import { useCategory } from "../../Context/CategoryContext";
+import { useFilter } from "../../Context/FilterContext";
 
 const HomePage = () => {
   const { categoryList } = useCategory();
-
+  const { state, dispatch } = useFilter();
+  console.log(categoryList);
   return (
     <div>
       <div className="home-container">
@@ -32,14 +34,19 @@ const HomePage = () => {
       <div className="featured-brands">
         {categoryList.map(({ categoryName, image }) => {
           return (
-            <Link to="/product">
-              <div className="brand">
+            <div
+              onClick={() => {
+                dispatch({ type: "CATEGORY", payload: categoryName });
+              }}
+              className="brand"
+            >
+              <Link to="/product">
                 <img src={image} />
                 <div className="brand-overlay">
                   <p className="overlay-msg">Shop Now</p>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           );
         })}
       </div>

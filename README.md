@@ -65,11 +65,3 @@ RARE KICKS is Ecommerce website to buy limited edition shoes.
 
 -It also has button Move to Cart.
 ![Screenshot (714)](https://user-images.githubusercontent.com/70329145/154850994-08d1e21d-f5b2-4aea-a39f-901fb766ffc0.png)
-
-## User Profile.
-
-https://user-images.githubusercontent.com/70329145/154851101-b54f4e1a-7c4e-435d-b07d-f321d7d174aa.mp4
-
-## Full Website Demo:-
-
-https://user-images.githubusercontent.com/70329145/154850414-d189317a-2ce9-4860-b85c-e64414e85a6a.mp4
